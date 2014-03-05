@@ -1,9 +1,0 @@
-package com.jtsay.monsterpop;
-
-public class Renderer {
-
-	public void render() {
-		
-	}
-	
-}

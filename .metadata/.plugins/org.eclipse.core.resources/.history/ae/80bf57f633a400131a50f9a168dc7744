@@ -1,9 +1,0 @@
-package com.jtsay.monsterpop.gameobjects;
-
-public abstract class Monster extends AGameObject {
-
-	public Monster(float posX, float posY, float width, float height) {
-		super(posX, posY, width, height);
-	}
-
-}
