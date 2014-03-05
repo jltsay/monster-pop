@@ -1,0 +1,17 @@
+package com.jtsay.monsterpop;
+
+import com.jtsay.monsterpop.gameobjects.GameObject;
+
+public class Space {
+
+	private GameObject gameObject;
+	
+	public boolean isEmpty() {
+		return gameObject == null;
+	}
+	
+	public getGameObject() {
+		return gameObject;
+	}
+	
+}

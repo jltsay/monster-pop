@@ -1,0 +1,19 @@
+package com.jtsay.monsterpop;
+
+import com.jtsay.monsterpop.gameobjects.Monster;
+
+public class MonsterGrid {
+
+	Monster monster1;
+	Monster monster2;
+	Monster monster3;
+	Monster monster4;
+	Monster monster5;
+	Monster monster6;
+	Monster monster7;
+	Monster monster8;
+	Monster monster9;
+	
+	
+	
+}

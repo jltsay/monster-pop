@@ -1,0 +1,5 @@
+package com.jtsay.monsterpop.gameobjects;
+
+public class Weapon {
+
+}

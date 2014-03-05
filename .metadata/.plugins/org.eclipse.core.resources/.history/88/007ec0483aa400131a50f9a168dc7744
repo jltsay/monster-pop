@@ -1,0 +1,11 @@
+package com.jtsay.monsterpop.grid;
+
+import com.jtsay.monsterpop.grid.GridObject;
+
+public abstract class Weapon extends GridObject {
+
+	public Weapon(float posX, float posY, float width, float height) {
+		super(posX, posY, width, height);
+	}
+
+}

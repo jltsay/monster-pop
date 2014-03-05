@@ -1,0 +1,10 @@
+package com.jtsay.monsterpop.gameobjects;
+
+public class Weapon extends GameObject {
+
+	public Weapon(float posX, float posY, float width, float height) {
+		super(posX, posY, width, height);
+		// TODO Auto-generated constructor stub
+	}
+
+}

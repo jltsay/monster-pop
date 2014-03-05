@@ -1,0 +1,9 @@
+package com.jtsay.monsterpop.grid;
+
+public abstract class Monster extends GridObject {
+
+	public Monster(int index) {
+		super(index);
+	}
+
+}

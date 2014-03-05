@@ -1,0 +1,11 @@
+package com.jtsay.monsterpop;
+
+import com.jtsay.monsterpop.gameobjects.Weapon;
+
+public class Player {
+
+	int currentHealth;
+	int maxHealth;
+	Weapon weapon;
+	
+}
