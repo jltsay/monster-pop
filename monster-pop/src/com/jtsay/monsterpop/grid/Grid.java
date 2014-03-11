@@ -1,7 +1,11 @@
 package com.jtsay.monsterpop.grid;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
+
+import com.jtsay.monsterpop.gameobjects.GameObject;
 
 
 /**
@@ -13,10 +17,19 @@ import java.util.Random;
  */
 public class Grid {
 	
-	private static Grid instance;
+	public static Grid instance;
 	ArrayList<Space> spaces;
-	ArrayList<Integer> emptyIndexes;
+	Set<Integer> emptyIndexes;
 	Random rand;
+	
+	private Grid() {
+		spaces = new ArrayList<Space>(9);
+		emptyIndexes = new HashSet<Integer>(9);
+		for (int i=0; i<9; i++) {
+			spaces.add(new Space(i));
+			emptyIndexes.add(i);
+		}
+	}
 	
 	public static Grid getInstance() {
 		if (instance == null) {
@@ -24,18 +37,35 @@ public class Grid {
 		}
 		return instance;
 	}
-	
-	private Grid() {
-		spaces = new ArrayList<Space>(9);
-		for (int i=0; i<9; i++) {
-			spaces.add(new Space());
-			emptyIndexes.add(i);
+
+	public void update(float delta) {
+		for (Space space : spaces) {
+			space.update(delta);
 		}
 	}
 	
 	public Space getRandomEmptySpace() {
-		int index = emptyIndexes.get(rand.nextInt(emptyIndexes.size()));
-		return spaces.get(index);
+		int setIndex = 0;
+		int randIndex = rand.nextInt(emptyIndexes.size());
+		for (Integer emptyIndex : emptyIndexes) {
+			if (setIndex == randIndex) {
+				return spaces.get(emptyIndex);
+			}
+			setIndex++;
+		}
+		throw new IllegalStateException();
+	}
+	
+	public void addObjectAtSpace(GameObject obj, int index) {
+		assert emptyIndexes.contains(index) : "Index:"+index+" is not empty.";
+		spaces.get(index).setObject(obj);
+		obj.setSpace(spaces.get(index));
+		emptyIndexes.remove(index);
+	}
+	
+	public void removeObjectAtSpace(int index) {
+		spaces.get(index).removeObject();
+		emptyIndexes.add(index);
 	}
 	
 	
