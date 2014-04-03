@@ -53,14 +53,18 @@ public class Grid {
 			}
 			setIndex++;
 		}
-		throw new IllegalStateException();
+		return null;
 	}
 	
-	public void addObjectAtSpace(GameObject obj, int index) {
-		assert emptyIndexes.contains(index) : "Index:"+index+" is not empty.";
-		spaces.get(index).setObject(obj);
-		obj.setSpace(spaces.get(index));
-		emptyIndexes.remove(index);
+	public void addObjectAtEmptySpace(GameObject obj) {
+		addObjectAtSpace(obj, getRandomEmptySpace());
+	}
+	
+	public void addObjectAtSpace(GameObject obj, Space space) {
+		if (space == null) return;
+		assert space.isEmpty();
+		space.setObject(obj);
+		emptyIndexes.remove(space.gridIndex);
 	}
 	
 	public void removeObjectAtSpace(int index) {

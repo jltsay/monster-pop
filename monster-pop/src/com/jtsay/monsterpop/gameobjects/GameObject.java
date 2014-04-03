@@ -7,11 +7,9 @@ import com.jtsay.monsterpop.grid.Space;
 public abstract class GameObject {
 
 	Space space;
-	float lifetime;
 	
-	public GameObject(float lifetime) {
+	public GameObject() {
 		this.space = null;
-		this.lifetime = lifetime;
 	}
 	
 	public abstract GameObject create();
@@ -30,5 +28,7 @@ public abstract class GameObject {
 	public void removeFromGrid() {
 		Grid.getInstance().removeObjectAtSpace(space.gridIndex);
 	}
+	
+	public abstract void touch();
 	
 }

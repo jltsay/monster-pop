@@ -8,31 +8,34 @@ public class Space {
 	public final int gridIndex;
 	private GameObject gameObject;
 	
-	public Space(int gridIndex) {
+	Space(int gridIndex) {
 		this.gridIndex = gridIndex;
 	}
 	
-	public boolean isEmpty() {
-		return gameObject == null;
+	boolean isEmpty() {
+		return gameObject == null && Grid.getInstance().emptyIndexes.contains(gridIndex);
 	}
 	
-	public GameObject getGridObject() {
+	GameObject getGridObject() {
 		return gameObject;
 	}
 	
-	public void update(float delta) {
+	void update(float delta) {
 		if (gameObject != null) {
 			gameObject.update(delta);
 		}
 	}
 	
 	void setObject(GameObject obj) {
+		removeObject();
 		gameObject = obj;
+		gameObject.setSpace(this);
 	}
 	
 	void removeObject() {
-		this.gameObject = null;
-		this.gameObject.setSpace(null);
+		if (isEmpty()) return;
+		gameObject.setSpace(null);
+		gameObject = null;
 	}
 	
 }
