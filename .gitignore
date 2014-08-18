@@ -1,26 +1,39 @@
-# Built application files
-*.apk
-*.ap_
+## Java
 
-# Files for the Dalvik VM
-*.dex
-
-# Java class files
 *.class
+*.war
+*.ear
+hs_err_pid*
 
-# Generated files
-bin/
-gen/
+## GWT
+war/
+html/war/gwt_bree/
+html/gwt-unitCache/
+.apt_generated/
+html/war/WEB-INF/deploy/
+html/war/WEB-INF/classes/
+.gwt/
+gwt-unitCache/
+www-test/
+.gwt-tmp/
 
-# Gradle files
-.gradle/
-build/
+## Android Studio and Intellij and Android in general
+android/libs/armeabi/
+android/libs/armeabi-v7a/
+android/libs/x86/
+android/gen/
+.idea/
+*.ipr
+*.iws
+*.iml
+out/
+com_crashlytics_export_strings.xml
 
-# Eclipse stuff
-proguard/
-*.pydevproject
+## Eclipse
+.classpath
+.project
 .metadata
-.gradle
+**/bin/
 tmp/
 *.tmp
 *.bak
@@ -29,37 +42,22 @@ tmp/
 local.properties
 .settings/
 .loadpath
-
-# External tool builders
 .externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
 *.launch
 
-# CDT-specific
-.cproject
+## NetBeans
+**/nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
 
-# PDT-specific
-.buildpath
+## Gradle
 
-# sbteclipse plugin 
-.target
+.gradle
+build/
 
-# TeXlipse plugin
-.texlipse
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+## OS Specific
+.DS_Store
